@@ -1,0 +1,13 @@
+<!-- 
+Create by guohj
+Data: 2018/5/8
+Desc: 大课作业第一次提交逻辑 
+-->
+<view class="wrap">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <textarea placeholder="在这里开始写作业..." maxlength="-1" auto-focus="true" adjust-position="false" bindinput='postContent'/>
+      <button form-type="submit" class='submit_btn'> 提交 </button>
+    </form>
+  </view>
+</view>

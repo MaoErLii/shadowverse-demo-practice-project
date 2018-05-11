@@ -1,0 +1,41 @@
+/* pages/index/assignmentReading/assignmentReading.wxss */
+page{
+  background:#fff;
+}
+
+.wrap{
+  width:690rpx;
+  margin:0 auto;
+}
+.title{
+  color:#333;
+  line-height: 60rpx;
+  font-size:40rpx;
+  margin:30rpx 0;
+}
+
+.timer{
+  font-size:28rpx;
+  color:#999;
+  margin:30rpx 0;
+}
+
+.content{
+  font-size: 32rpx;
+  color:#333;
+  line-height: 56rpx;
+  margin-bottom: 180rpx;
+}
+
+.btn{
+  width:690rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color:#fff;
+  background: #f44444;
+  border-radius: 8rpx;
+  position:fixed;
+  z-index: 999;
+  left: 30rpx;
+  bottom: 0;
+}

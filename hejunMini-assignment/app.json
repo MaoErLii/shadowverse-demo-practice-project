@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/assignmentCoreCourse/assignmentCoreCourse",
+    "pages/index/assignmentReading/assignmentReading",
+    "pages/index/assignmentLecture/assignmentLecture",
+    "pages/index/assignmentComposition/assignmentComposition",
+    "pages/index/assignmentCoreCourse/postCoreCourse/postCoreCourse",
+    "pages/index/assignmentCoreCourse/putCoreCourse/putCoreCourse",
+    "pages/index/assignmentCoreCourse/assignmentDetailCoreCourse/assignmentDetailCoreCourse",
+    "pages/index/assignmentReading/putReading/putReading",
+    "pages/index/assignmentReading/postReading/postReading",
+    "pages/index/assignmentReading/assignmentDetail/assignmentDetail",
+    "pages/index/assignmentComposition/putComposition/putComposition",
+    "pages/index/assignmentComposition/postComposition/postComposition",
+    "pages/index/assignmentComposition/assignmentDetial/assignmentDetial",
+    "pages/index/assignmentLecture/putLecture/putLecture",
+    "pages/index/assignmentLecture/postLecture/postLecture",
+    "pages/index/assignmentLecture/assignmentDetail/assignmentDetail",
+    "pages/index/wholeCore/wholeCore",
+    "pages/index/wholeReading/wholeReading",
+    "pages/index/classOverview/classOverview",
+    "pages/index/classAssessment/classAssessment",
+    "pages/index/wholeCore/coreDetail/coreDetail",
+    "pages/index/wholeReading/readingDetail/readingDetail",
+    "pages/index/classOverview/lectureDetail/lectureDetail",
+    "pages/index/classAssessment/compositionData/compositionData"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

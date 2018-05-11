@@ -1,0 +1,19 @@
+<!--pages/index/classAssessment/classAssessment.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/10
+Desc: 班级互评作文列表页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card" wx:for = '{{compositionData}}' wx:for-item = 'data'>
+            <view class = "personal">
+              <image class = "avatar" src = '{{data.icon}}'></image>
+              <view class = "info">
+                <view class = "name" data-id="{{data.assignment_compositions_id}}" bindtap='toast'>{{data.name}}</view>
+                <!-- <view class = "other_info"data-id="{{data.assignment_compositions_id}}" bindtap='toast'>{{data.end_time}}</view> -->
+              </view>
+            </view>
+            <!-- <view class = "title">{{data.title}}</view> -->
+            <view class = "task" data-id="{{data.assignment_compositions_id}}" bindtap='toast'>{{data.assignment_compositions_content}}</view>
+          </view>
+</view>

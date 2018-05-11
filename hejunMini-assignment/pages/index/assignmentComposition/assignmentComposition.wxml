@@ -1,0 +1,17 @@
+<!--pages/index/assignmentComposition/assignmentComposition.wxml-->
+<!--
+Create by guohj
+Data: 2018/5/8 
+Desc：作文需求页面 
+-->
+ <view  class = "wrap">
+  <view class = "title">{{compositionData.title}}</view>
+  <view class = "timer">{{compositionData.create_user_name}} {{compositionData.start_time}}</view>
+  <view class = "content"> 
+  {{compositionData.requirements}}
+  </view>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 1}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 2}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 3}}">查看作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 4}}">查看作业</button>
+</view> 

@@ -1,0 +1,51 @@
+<!--pages/index/wholeReading/wholeReading.wxml-->
+<!--  
+Created by guohj
+Dated: 2018/5/10
+Desc: 同学必读全院作业页面  
+-->
+
+<view class = "wrap">
+  <view class = "swiper-tab">
+    <view class = "swiper-tab-list {{currentTab == 0 ? 'on' : ''}}" data-current = "0" bindtap = "switchNav">全院作业</view>
+    <view class = "swiper-tab-list {{currentTab == 1 ? 'on' : ''}}" data-current = "1" bindtap= 'switchNav'>优秀作业</view>
+    <view class = "section">
+      <picker mode = "multiSelector" bindchange='bindMultiPickerChange' bindcolumnchange = "bindMultiPickerColumnChange" value  = "{{multiIndex}}" range = "{{multiArray}}">
+        <view class = "picker picker_btn">筛选</view>
+      </picker>
+    </view>
+  </view>
+  
+  <swiper current='{{currentTab}}' class = "swiper-box" duration = '300' style = "height:{{winHeight - winHeight*0.07}}px" bindchange='bindChange'>
+    <!-- 全院作业 -->
+    <swiper-item>
+      <scroll-view scroll-y = "true" style = "height:{{winHeight - winHeight*0.07}}px">
+        <view class = "wrap">
+          <view class = "assignment_card" wx:for = '{{readingData}}' wx:for-item = 'data'>
+            <view class = "detail" >
+            <view class = "personal">
+              <image class = "avatar" src = '{{data.icon}}'></image>
+              <view class = "info">
+                <view class = "name" data-id="{{data.id}}" bindtap='toast'>{{data.student_name}}</view>
+                <view class = "other_info"data-id="{{data.id}}" bindtap='toast'>{{data.college_name}} {{data.class_name}} {{data.created_at}}</view>
+              </view>
+            </view>
+
+            <view class = "task" data-id="{{data.id}}" bindtap='toast'>{{data.content}}<text class = "link">全文</text></view>
+          </view>
+          </view>
+        </view>
+
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 优秀作业 -->
+    <swiper-item>
+      <scroll-view scroll-y = "true" style='height:{{winHeight - winHeight*0.07}}px'> 
+      
+      </scroll-view>
+    </swiper-item>
+
+  </swiper>
+
+</view>

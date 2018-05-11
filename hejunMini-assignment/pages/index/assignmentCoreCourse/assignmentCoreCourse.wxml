@@ -1,0 +1,18 @@
+<!--pages/index/assingmentCoreCourse/assignmentCoreCourse.wxml-->
+<!--
+Create by guohj
+Data: 2018/5/8 
+Desc：大课作业作业需求页面 
+-->
+ <view  class = "wrap">
+  <view class = "title">{{coreData.title}}</view>
+  <view class = "timer">{{coreData.create_user_name}} {{coreData.start_time}}</view>
+  <view class = "content"> 
+  {{coreData.requirements}}
+  </view>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 1}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 2}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 3}}">查看作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 4}}">查看作业</button>
+</view> 
+

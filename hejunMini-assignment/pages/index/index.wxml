@@ -1,0 +1,177 @@
+<!-- 
+Created by guohj
+Data: 2018/5/8
+Desc:作业列表 
+-->
+<view class = "wrap" wx:if = "{{logged}}">
+<view class = "taskContent">
+    <view class="swiper-tab" >
+      <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="switchNav">全部</view>
+      <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="switchNav">未完成</view>
+      <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="switchNav">已完成</view>
+    </view>
+    
+  <swiper current='{{currentTab}}' class = "swiper-box" duration = '300' style = "height:{{winHeight - winHeight*0.07}}px" bindchange='bindChange'>
+  <!-- 全部作业 -->
+  <swiper-item>
+      <scroll-view scroll-y = "true" style = "height:{{winHeight - winHeight*0.07}}px">
+  <view class = "wrap">
+    <view class = "usertask" wx:for = "{{courseData}}" wx:for-item = "data">
+      <view class = "content_part">
+      <view class = "cover">
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 1}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=900539606,2626568943&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 2}}" src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=450673013,1561101992&fm=200&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 3}}" src = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3709155260,2531786992&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 4}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2807949468,1548358995&fm=200&gp=0.jpg"></image>
+       <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 2}}">
+          <text>未完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 1}}">
+          <text>待完成</text>
+        </view>
+        <view class = "isFinished isFinished_yes"   wx:if = "{{data.completion_status == 3}}">
+          <text>已完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 4}}">
+          <text>逾期完成</text>
+        </view>
+      <view class = "task_type">
+          <text>{{data.assignment_type_name}}</text>
+      </view>
+       <view class = "end_time">
+          <text>{{data.end_time}}截止</text>
+      </view>
+    </view>
+      <view class = "intro_wrap">
+        <view class = "title">
+            <text>{{data.title}}</text>
+        </view>
+        <view class = "intro">
+          {{data.requirements}}
+        </view>
+      </view>
+      </view>
+      <view class = "interact">
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 1}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 2}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 3}}" bindtap = "assignmentOverview" data-coursedata = "{{data}}" >班级总览</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 4}}" data-coursedata = "{{data}}" bindtap='assignmentOverview'>班级互评</text>
+        <text id = "writetask" wx:if = "{{data.completion_status == 1}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+         <text id = "writetask" wx:if = "{{data.completion_status == 2}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 3}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 4}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+      </view>
+    </view>
+  </view>
+
+     </scroll-view>
+    </swiper-item>
+  <!-- 未完成作业 -->
+    <swiper-item>
+      <scroll-view scroll-y = "true" style = "height:{{winHeight - winHeight*0.07}}px">
+         <view class = "wrap">
+    <view class = "usertask" wx:for = "{{courseData}}" wx:for-item = "data" wx:if = "{{data.completion_status == 1 || data.completion_status == 2}}">
+      <view class = "content_part" >
+      <view class = "cover">
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 1}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=900539606,2626568943&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 2}}" src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=450673013,1561101992&fm=200&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 3}}" src = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3709155260,2531786992&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 4}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2807949468,1548358995&fm=200&gp=0.jpg"></image>
+       <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 2}}">
+          <text>未完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 1}}">
+          <text>待完成</text>
+        </view>
+        <view class = "isFinished isFinished_yes"   wx:if = "{{data.completion_status == 3}}">
+          <text>已完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 4}}">
+          <text>逾期完成</text>
+        </view>
+      <view class = "task_type">
+          <text>{{data.assignment_type_name}}</text>
+      </view>
+       <view class = "end_time">
+          <text>{{data.end_time}}截止</text>
+      </view>
+    </view>
+      <view class = "intro_wrap">
+        <view class = "title">
+            <text>{{data.title}}</text>
+        </view>
+        <view class = "intro">
+          {{data.requirements}}
+        </view>
+      </view>
+      </view>
+      <view class = "interact">
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 1}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 2}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 3}}" bindtap = "assignmentOverview" data-coursedata = "{{data}}" >班级总览</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 4}}" data-coursedata = "{{data}}" bindtap='assignmentOverview'>班级互评</text>
+        <text id = "writetask" wx:if = "{{data.completion_status == 1}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+         <text id = "writetask" wx:if = "{{data.completion_status == 2}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 3}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 4}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+      </view>
+    </view>
+  </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 已完成作业 -->
+   <swiper-item>
+      <scroll-view scroll-y = "true" style = "height:{{winHeight - winHeight*0.07}}px">
+        <view class = "wrap">
+    <view class = "usertask" wx:for = "{{courseData}}" wx:for-item = "data" wx:if = "{{data.completion_status == 3 || data.completion_status == 4}}">
+      <view class = "content_part" >
+      <view class = "cover">
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 1}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=900539606,2626568943&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 2}}" src = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=450673013,1561101992&fm=200&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 3}}" src = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3709155260,2531786992&fm=27&gp=0.jpg"></image>
+          <image class = "cover_image" wx:if = "{{data.assignment_type_id == 4}}" src = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2807949468,1548358995&fm=200&gp=0.jpg"></image>
+       <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 2}}">
+          <text>未完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 1}}">
+          <text>待完成</text>
+        </view>
+        <view class = "isFinished isFinished_yes"   wx:if = "{{data.completion_status == 3}}">
+          <text>已完成</text>
+        </view>
+        <view class = "isFinished isFinished_no"   wx:if = "{{data.completion_status == 4}}">
+          <text>逾期完成</text>
+        </view>
+      <view class = "task_type">
+          <text>{{data.assignment_type_name}}</text>
+      </view>
+       <view class = "end_time">
+          <text>{{data.end_time}}截止</text>
+      </view>
+    </view>
+      <view class = "intro_wrap">
+        <view class = "title">
+            <text>{{data.title}}</text>
+        </view>
+        <view class = "intro">
+          {{data.requirements}}
+        </view>
+      </view>
+      </view>
+      <view class = "interact">
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 1}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 2}}" bindtap = 'assignmentOverview' data-coursedata = "{{data}}">全院作业</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 3}}" bindtap = "assignmentOverview" data-coursedata = "{{data}}" >班级总览</text>
+        <text id = "assess" wx:if = "{{data.assignment_type_id == 4}}" data-coursedata = "{{data}}" bindtap='assignmentOverview'>班级互评</text>
+        <text id = "writetask" wx:if = "{{data.completion_status == 1}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+         <text id = "writetask" wx:if = "{{data.completion_status == 2}}" data-coursedata = "{{data}}" bindtap='writeTask'>写作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 3}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+        <text id  = "writetask" wx:if = "{{data.completion_status == 4}}" bindtap='writeTask' data-coursedata = "{{data}}">我的作业</text>
+      </view>
+    </view>
+  </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+   </view>    
+</view>

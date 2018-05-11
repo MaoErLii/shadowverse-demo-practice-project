@@ -1,0 +1,10 @@
+<!--
+Created by guohj
+Data: 2018/5/9
+Desc: 查看作业页面  
+-->
+<view class="wrap">
+  <view class="section">
+    <text>{{coreData.content}}</text>
+  </view>
+</view>

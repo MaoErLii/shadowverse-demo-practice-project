@@ -1,0 +1,10 @@
+<!--pages/index/assignmentComposition/assignmentDetial/assignmentDetial.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/10
+Desc: 作文详情页面 
+-->
+<view class = "wrap">
+  <view class = title>{{compositionData.title}}</view>
+  <view class = "content">{{compositionData.content}}</view>
+</view>

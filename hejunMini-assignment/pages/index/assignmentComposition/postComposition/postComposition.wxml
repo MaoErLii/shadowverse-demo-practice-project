@@ -1,0 +1,17 @@
+<!--pages/index/assignmentComposition/postComposition/postComposition.wxml-->
+<!-- 
+Created by guohj
+Data: 2018/5/8
+Desc: 作文提交页面  
+ -->
+<view class="wrap">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <view class = "title" ><input placeholder='标题' bindinput='postTitle'></input></view>
+      <view class = "textarea"> 
+        <textarea placeholder='请写作文' bindinput='postContent'/>
+      </view>
+      <button form-type="submit" class='submit_btn'> 提交 </button>
+    </form>
+  </view>
+</view>

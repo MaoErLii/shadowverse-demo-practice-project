@@ -1,0 +1,16 @@
+<!--pages/index/classAssessment/compositionData/compositionData.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/10
+Desc: 作文详情页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card">
+            <view class = "personal">
+              <view class = "info">
+                <view class = "name">{{compositionData.title}}</view>
+              </view>
+            </view>
+            <view class = "task">{{compositionData.content}}</view>
+          </view>
+</view>

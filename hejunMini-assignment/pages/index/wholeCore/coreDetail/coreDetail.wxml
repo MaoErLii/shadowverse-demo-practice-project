@@ -1,0 +1,18 @@
+<!--pages/index/wholeCore/coreDetail/coreDetail.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/10
+Desc: 大课作业全院/优秀作业作业详情页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card">
+            <view class = "personal">
+              <image class = "avatar" src = '{{coreData.icon}}'></image>
+              <view class = "info">
+                <view class = "name">{{coreData.student_name}}</view>
+                <view class = "other_info">{{coreData.college_name}} {{coreData.class_name}} {{coreData.created_at}}</view>
+              </view>
+            </view>
+            <view class = "task">{{coreData.content}}</view>
+          </view>
+</view>

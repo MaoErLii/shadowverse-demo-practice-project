@@ -1,0 +1,22 @@
+<!--pages/index/assignmentComposition/putComposition/putComposition.wxml-->
+<!-- 
+Created by guohj
+Data: 2018/5/8
+Desc: 作文修改页面  
+-->
+<view class="wrap">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <view class = "title" wx:if = "{{canEdit}}"><text>{{compositionData.title}}</text></view>
+      <view class = "title" wx:else><input value = "{{compositionData.title}}" bindinput='putTitle'></input></view>
+      <view class = "textarea" wx:if = "{{canEdit}}" >
+        <text>{{compositionData.content}}</text>
+      </view>
+      <view class = "textarea" wx:else> 
+        <textarea value="{{compositionData.content}}" bindinput='putContent'/>
+      </view>
+      <button bindtap='editBtn' wx:if = "{{canEdit}}" class = 'submit_btn'>编辑</button>
+      <button form-type="submit" wx:else class='submit_btn'> 提交 </button>
+    </form>
+  </view>
+</view>

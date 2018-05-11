@@ -1,0 +1,19 @@
+<!-- 
+Created by guohj
+Data: 2018/5/8
+Desc: 修改大课作业页面 
+-->
+<view class="wrap">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <view class = "textarea" wx:if = "{{canEdit}}">
+        <text>{{coreData.content}}</text>
+      </view>
+      <view class = "textarea" wx:else> 
+        <textarea value="{{coreData.content}}" placeholder="在这里开始写作业..." bindinput='putContent'/>
+      </view>
+      <button bindtap='editBtn' wx:if = "{{canEdit}}" class = 'submit_btn'>编辑</button>
+      <button form-type="submit" wx:else class='submit_btn'> 提交 </button>
+    </form>
+  </view>
+</view>

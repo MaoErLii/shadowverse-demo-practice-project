@@ -1,0 +1,50 @@
+/* pages/index/wholeReading/readingDetail/readingDetail.wxss */
+page{
+  background-color: #fff;
+}
+
+.wrap{
+  width: 750rpx;
+  padding:30rpx;
+  box-sizing: border-box;
+}
+
+.personal{
+  width:100%;
+  height:80rpx;
+  overflow:hidden;
+  margin-bottom:30rpx;
+}
+
+.personal .avatar{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 50%;
+  float:left;
+  margin-right: 20rpx;
+}
+.presonal .info{
+  height:80rpx;
+  float:left;
+}
+
+.name{
+  font-size:32rpx;
+  color: rgba(38, 38, 38, 1);
+}
+
+.other_info{
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.task{
+  height:142rpx;
+  font-size:32rpx;
+  color:rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+}
+
+.task image{
+  width:100%;
+}

@@ -1,0 +1,11 @@
+<!--pages/index/assignmentReading/assignmentDetail/assignmentDetail.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/10
+Desc: 同学必读作业详情页面 
+-->
+<view class = "wrap">
+  <view class = "content">
+    <text>{{readingData.content}}</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/index/assignmentLecture/assignmentLecture.wxml-->
+<!-- 
+Created by guohj
+Date: 2018/5/9
+Desc: 演讲作业作业需求页面 
+-->
+ <view  class = "wrap">
+  <view class = "title">{{lectureData.title}}</view>
+  <view class = "timer">{{lectureData.create_user_name}} {{lectureData.start_time}}</view>
+  <view class = "content"> 
+  {{lectureData.requirements}}
+  </view>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 1}}">提交演讲</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 2}}">提交演讲</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 3}}">查看作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 4}}">查看作业</button>
+</view> 

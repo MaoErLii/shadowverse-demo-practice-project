@@ -1,0 +1,17 @@
+<!--pages/index/assignmentReading/assignmentReading.wxml-->
+<!-- 
+Created by guohj
+Data: 2018/5/9
+Desc: 同学必读作业需求页面 
+-->
+ <view  class = "wrap">
+  <view class = "title">{{readingData.title}}</view>
+  <view class = "timer">{{readingData.create_user_name}} {{readingData.start_time}}</view>
+  <view class = "content"> 
+  {{readingData.content}}
+  </view>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 1}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 2}}">写作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 3}}">查看作业</button>
+  <button class = "btn" bindtap='write' wx:if = "{{completionStatus == 4}}">查看作业</button>
+</view> 

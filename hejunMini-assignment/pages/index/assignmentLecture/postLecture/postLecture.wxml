@@ -1,0 +1,49 @@
+<!--pages/index/assignmentLecture/postLecture/postLecture.wxml-->
+<!-- 
+Created by guohj
+Data: 2018/5/9
+Desc: 演讲作业提交页面 
+-->
+<view class = "wrap">
+  <form bindsubmit="bindFormSubmit">
+    <view class = "theme">
+      <text>演讲主题</text>
+      <input class = "input" placeholder='请填写演讲主题' bindinput='bindTheme'></input>
+    </view>
+
+    <view class = "date">
+      <text>演讲日期</text>
+      <view class = "section">
+        <picker mode = "date" value = "{{data}}" bindchange='bindDateChange' start = "2000-01-01" end = "2323-12-31">
+          <view class = "picker">{{dates}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class = "time">
+      <text>演讲时间</text>
+      <view class = "section">
+        <picker mode = "time" value = "{{time}}" bindchange='bindTimeChange' start = "00:00" end = "23:59">
+          <view class = "picker">{{times}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class = "Address">
+      <text>演讲地点</text>
+      <input class = "input" placeholder='请填写演讲地点' bindinput='bindAddress'></input>
+    </view>
+
+    <view class = "summary">
+      <text>概况简报</text>
+      <textarea placeholder='请填写概况简报' bindinput='bindSummary'></textarea>
+    </view>
+
+    <view class = "image">
+      <text>上传图片</text>
+      <image bindtap = "upImg" src = "{{upImg? upImg:'../image/sunny3.png'}}"></image>
+    </view>
+
+    <button class='btn' formType="submit">提交</button> 
+  </form>
+</view>

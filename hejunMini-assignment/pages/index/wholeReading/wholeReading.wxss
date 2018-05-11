@@ -1,0 +1,111 @@
+/* pages/index/wholeCore/wholeCore.wxss */
+/* pages/taskReview/taskReview.wxss */
+.swiper-tab{ 
+    width: 100%; 
+    border-bottom: 2rpx solid #777777; 
+    text-align: center; 
+    line-height: 80rpx;    
+} 
+.swiper-tab-list{  font-size: 30rpx; 
+    display: inline-block; 
+    width: 33.33%; 
+    color: #777777; 
+} 
+.on{ color: #da7c0c; 
+    border-bottom: 5rpx solid #da7c0c;} 
+   
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; } 
+
+
+
+
+/**taskDetails.wxss**/
+
+page {
+  background-color: #f5f5f5;
+}
+
+.assignment_card {
+  width: 100%;
+  height: 312rpx;
+  background: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  margin: 20rpx auto;
+}
+
+.personal {
+  width: 100%;
+  height: 80rpx;
+  overflow: hidden;
+}
+
+.personal .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.personal .info {
+  height: 80rpx;
+  float: left;
+}
+
+.name {
+  font-size: 32rpx;
+  color: rgba(38, 38, 38, 1);
+}
+
+.other_info {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.task {
+  height: 142rpx;
+  font-size: 32rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin-top: 34rpx;
+}
+
+.link {
+  color: #789cee;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 92rpx;
+  line-height: 92rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  background: #fff;
+}
+
+.swiper-tab-item {
+  width: 30%;
+  color: #434343;
+}
+
+.active {
+  color: #f65959;
+}
+
+swiper {
+  display: block;
+  overflow-y: scroll;
+}
+
+.picker_btn {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #999;
+}

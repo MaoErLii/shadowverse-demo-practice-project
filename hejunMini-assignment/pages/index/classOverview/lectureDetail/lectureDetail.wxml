@@ -1,0 +1,14 @@
+<!--pages/index/classOverview/lectureDetail/lectureDetail.wxml-->
+<!--
+Created by guohj
+Date: 2018/5/10
+Desc: 演讲作业详情页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card">
+            <view class = "subject">{{lectureData.subject}}</view>
+            <view class = "address"><text>演讲地点:</text>{{lectureData.address}}</view>
+            <view class = "summary"><text>演讲概况:</text>{{lectureData.summary}}</view>
+            <image src = "{{lectureData.file_host + '/' + lectureData.file_path}}"></image>
+          </view>
+</view>

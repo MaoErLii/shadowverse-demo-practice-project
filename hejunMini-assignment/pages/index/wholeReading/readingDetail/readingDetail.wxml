@@ -1,0 +1,18 @@
+<!--pages/index/wholeReading/readingDetail/readingDetail.wxml-->
+<!--
+Created by guohj
+Date: 2018/5/10
+Desc: 同学必读全院/优秀作业作业详情页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card">
+            <view class = "personal">
+              <image class = "avatar" src = '{{readingData.icon}}'></image>
+              <view class = "info">
+                <view class = "name">{{readingData.student_name}}</view>
+                <view class = "other_info">{{readingData.college_name}} {{readingData.class_name}} {{readingData.created_at}}</view>
+              </view>
+            </view>
+            <view class = "task">{{readingData.content}}</view>
+          </view>
+</view>

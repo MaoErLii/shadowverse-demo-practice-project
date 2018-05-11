@@ -1,0 +1,18 @@
+<!--pages/index/classOverview/classOverview.wxml-->
+<!--
+ Created by guohj
+Data: 2018/5/10
+Desc: 班级总览页面 
+-->
+<view class = "wrap">
+          <view class = "assignment_card" wx:for = '{{lectureData}}' wx:for-item = 'data'>
+            <view class = "personal">
+              <image class = "avatar" src = '{{data.icon}}'></image>
+              <view class = "info">
+                <view class = "name" data-id="{{data.id}}" bindtap='toast'>{{data.student_name}}</view>
+                <view class = "other_info"data-id="{{data.id}}" bindtap='toast'>{{data.subject}}</view>
+              </view>
+            </view>
+            <view class = "task" data-id="{{data.id}}" bindtap='toast'>{{data.summary}}</view>
+          </view>
+</view>

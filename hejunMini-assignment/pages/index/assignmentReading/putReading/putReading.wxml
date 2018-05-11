@@ -1,0 +1,15 @@
+<!--pages/index/assignmentReading/putReading/putReading.wxml-->
+<view class="wrap">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <view class = "textarea" wx:if = "{{canEdit}}">
+        <text>{{readingData.content}}</text>
+      </view>
+      <view class = "textarea" wx:else> 
+        <textarea value="{{readingData.content}}" placeholder="在这里开始写作业..." bindinput='putContent'/>
+      </view>
+      <button bindtap='editBtn' wx:if = "{{canEdit}}" class = 'submit_btn'>编辑</button>
+      <button form-type="submit" wx:else class='submit_btn'> 提交 </button>
+    </form>
+  </view>
+</view>
